@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عمر الفاروق | ملف الإنجاز</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- إعدادات Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: '#00ff41',
+                        darkbg: '#0d1117',
+                        darkcard: '#161b22',
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-cyber selection:text-black transition-all duration-300">
+
+    <!-- شريط التنقل (Navbar) -->
+    <nav class="fixed w-full top-0 z-50 bg-darkbg/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-mono text-cyber text-xl font-bold tracking-widest">
+                    &lt;Omar_AlFarooq/&gt;
+                </div>
+
+                <div class="hidden md:flex items-center gap-6">
+                    <div class="flex items-baseline space-x-8 rtl:space-x-reverse">
+                        <a href="#hero" data-i18n="nav_home" class="hover:text-cyber px-3 py-2 rounded-md text-sm font-medium transition-colors">الرئيسية</a>
+                        <a href="#skills" data-i18n="nav_skills" class="hover:text-cyber px-3 py-2 rounded-md text-sm font-medium transition-colors">المهارات</a>
+                        <a href="#projects" data-i18n="nav_projects" class="hover:text-cyber px-3 py-2 rounded-md text-sm font-medium transition-colors">المشاريع</a>
+                    </div>
+                </div>
+
+                <!-- زر تغيير اللغة -->
+                <div class="relative">
+                    <select id="lang-switcher" class="bg-darkcard border border-gray-700 text-gray-300 text-sm rounded-lg focus:ring-cyber focus:border-cyber block w-full p-2.5 outline-none cursor-pointer hover:border-cyber transition">
+                        <option value="ar">🇸🇦 العربية</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="fr">🇫🇷 Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي (Hero Section) -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
+
+            <div class="md:w-1/2 text-center rtl:md:text-right ltr:md:text-left z-10">
+                <p class="text-cyber font-mono mb-2 text-lg" data-i18n="hero_greet">~/مرحباً_بالعالم $</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">
+                    <span data-i18n="hero_iam">أنا</span> <span class="text-cyber" data-i18n="hero_name">عمر الفاروق</span>
+                </h1>
+                <h2 class="text-xl sm:text-2xl text-gray-400 mb-6 font-mono typing-cursor min-h-[3rem]" data-i18n="hero_title">
+                    خبير تقني، مصمم، ومسوق رقمي
+                </h2>
+                <p class="text-gray-400 mb-8 max-w-lg mx-auto rtl:md:mr-0 ltr:md:ml-0 leading-relaxed" data-i18n="hero_desc">
+                    أجمع بين قوة البرمجة والأمن السيبراني، وبين إبداع التصميم وذكاء التسويق الرقمي. أقدم حلولاً متكاملة تبدأ من الفكرة وبناء العلامة التجارية، مروراً بالتطوير، وصولاً إلى استهداف الجمهور المناسب.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center rtl:md:justify-start ltr:md:justify-start">
+                    <a href="#skills" class="bg-transparent border border-cyber text-cyber hover:bg-cyber hover:text-black font-bold py-3 px-8 rounded transition duration-300 font-mono text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt"></i> <span data-i18n="btn_skills">اكتشف مهاراتي</span>
+                    </a>
+                    <a href="#projects" class="bg-darkcard border border-gray-700 text-gray-300 hover:border-gray-500 font-bold py-3 px-8 rounded transition duration-300 text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-folder-open"></i> <span data-i18n="btn_projects">المشاريع</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 flex justify-center z-10 w-full">
+                <!-- Terminal Window -->
+                <div class="w-full max-w-md bg-darkcard rounded-lg overflow-hidden border border-gray-700 shadow-2xl ltr:text-left rtl:text-left">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="text-xs text-gray-400 ms-auto font-mono">omar@system:~</span>
+                    </div>
+                    <div class="p-6 font-mono text-sm text-gray-300 leading-relaxed" dir="ltr">
+                        <p class="text-cyber">$ whoami</p>
+                        <p class="mb-4" data-i18n="term_whoami">Omar Al-Farooq - Multidisciplinary Expert</p>
+
+                        <p class="text-cyber">$ cat capabilities.txt</p>
+                        <p class="mb-4 text-xs sm:text-sm" data-i18n="term_cap">[Cybersecurity, Code, Design, Marketing, Branding]</p>
+
+                        <p class="text-cyber">$ ./launch_strategy.sh</p>
+                        <p class="text-green-500 animate-pulse" data-i18n="term_exec">Executing full-stack strategies...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المهارات (Skills) -->
+    <section id="skills" class="py-20 bg-darkbg border-t border-gray-800 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span class="text-cyber">#</span> <span data-i18n="skills_title">ترسانة المهارات</span></h2>
+                <div class="w-24 h-1 bg-cyber mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-shield-halved text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_1">أمن سيبراني</h3>
+                </div>
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-code text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_2">برمجة وتطوير</h3>
+                </div>
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-laptop-code text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_3">تصميم مواقع</h3>
+                </div>
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-pen-nib text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_4">تصميم جرافيكي</h3>
+                </div>
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-bullhorn text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_5">إعلانات ممولة</h3>
+                </div>
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-hashtag text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_6">إدارة سوشيال ميديا</h3>
+                </div>
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-fingerprint text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_7">بناء العلامة التجارية</h3>
+                </div>
+
+                <div class="skill-card bg-darkcard p-6 rounded-lg border border-gray-800 text-center relative overflow-hidden">
+                    <i class="fa-solid fa-chess-knight text-5xl text-gray-500 mb-4 inline-block transition-transform duration-300"></i>
+                    <h3 class="font-bold text-white text-lg" data-i18n="skill_8">استراتيجية رقمية</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع (Projects) -->
+    <section id="projects" class="py-20 bg-darkcard border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span class="text-cyber">#</span> <span data-i18n="proj_title">سجل العمليات (أمثلة)</span></h2>
+                <div class="w-20 h-1 bg-cyber mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- مشروع 1 -->
+                <div class="bg-darkbg rounded-lg border border-gray-800 overflow-hidden hover:border-cyber transition-all duration-300 group">
+                    <div class="h-48 bg-gray-800 relative flex items-center justify-center">
+                        <i class="fa-solid fa-bullseye text-6xl text-gray-700 group-hover:text-cyber transition-colors duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="proj_1_title">حملة تسويقية متكاملة</h3>
+                        <p class="text-gray-400 text-sm mb-4" data-i18n="proj_1_desc">
+                            بناء هوية بصرية كاملة لعلامة تجارية، وإطلاق إعلانات ممولة مستهدفة لزيادة المبيعات.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono bg-gray-800 text-gray-300 px-2 py-1 rounded">Branding</span>
+                            <span class="text-xs font-mono bg-gray-800 text-gray-300 px-2 py-1 rounded">Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مشروع 2 -->
+                <div class="bg-darkbg rounded-lg border border-gray-800 overflow-hidden hover:border-cyber transition-all duration-300 group">
+                    <div class="h-48 bg-gray-800 relative flex items-center justify-center">
+                        <i class="fa-solid fa-shield-halved text-6xl text-gray-700 group-hover:text-cyber transition-colors duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="proj_2_title">منصة ويب آمنة</h3>
+                        <p class="text-gray-400 text-sm mb-4" data-i18n="proj_2_desc">
+                            تصميم وتطوير موقع ويب احترافي مع تطبيق أعلى معايير الأمن السيبراني لحماية البيانات.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono bg-gray-800 text-gray-300 px-2 py-1 rounded">Web Dev</span>
+                            <span class="text-xs font-mono bg-gray-800 text-gray-300 px-2 py-1 rounded">Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مشروع 3 -->
+                <div class="bg-darkbg rounded-lg border border-gray-800 overflow-hidden hover:border-cyber transition-all duration-300 group">
+                    <div class="h-48 bg-gray-800 relative flex items-center justify-center">
+                        <i class="fa-solid fa-network-wired text-6xl text-gray-700 group-hover:text-cyber transition-colors duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="proj_3_title">إدارة التواجد الرقمي</h3>
+                        <p class="text-gray-400 text-sm mb-4" data-i18n="proj_3_desc">
+                            إدارة صفحات السوشيال ميديا وتنفيذ استراتيجيات تسويقية لزيادة التفاعل وبناء مجتمع نشط.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono bg-gray-800 text-gray-300 px-2 py-1 rounded">Social Media</span>
+                            <span class="text-xs font-mono bg-gray-800 text-gray-300 px-2 py-1 rounded">Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="bg-darkbg border-t border-gray-800 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 rtl:space-x-reverse mb-4">
+                <a href="#" class="text-gray-500 hover:text-cyber transition"><i class="fa-brands fa-github text-2xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-cyber transition"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-cyber transition"><i class="fa-brands fa-twitter text-2xl"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm font-mono">
+                &copy; 2024 <span data-i18n="footer_text">مبني بواسطة شغف بالكود والحماية والتسويق</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- سكربت الترجمة والتمرير -->
+    <script src="js/main.js"></script>
+</body>
+</html>
